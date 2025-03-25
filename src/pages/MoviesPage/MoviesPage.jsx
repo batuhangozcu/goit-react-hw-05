@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { searchMovies } from "../../services/api";
 import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
+import styles from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -38,7 +39,7 @@ const MoviesPage = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <form onSubmit={handleSearch}>
         <input type="text" name="query" placeholder="Search for movies..." />
         <button type="submit">Search</button>
@@ -49,7 +50,7 @@ const MoviesPage = () => {
       {!loading && movies.length > 0 && <MovieList movies={movies} />}
 
       {!loading && query && movies.length === 0 && (
-        <p>No movies found for your search.</p>
+        <p className={styles.warning}>No movies found for your search.</p>
       )}
     </div>
   );

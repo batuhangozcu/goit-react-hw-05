@@ -39,7 +39,6 @@ const MovieReviews = () => {
           <li key={review.id}>
             <h4>{review.author}</h4>
             <p>{review.content}</p>
-            <p>Rating: {review.rating ? review.rating : "Not rated"}</p>
           </li>
         ))}
       </ul>

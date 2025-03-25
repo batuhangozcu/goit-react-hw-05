@@ -1,20 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
+import styles from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <img
-            src={`${imageBaseUrl}${movie.poster_path}`}
-            alt={movie.title}
-            width="100"
-          />
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-            {movie.title}
+            <img
+              src={`${imageBaseUrl}${movie.poster_path}`}
+              alt={movie.title}
+            />
+            <p>{movie.title}</p>
           </Link>
         </li>
       ))}

@@ -2,6 +2,7 @@ import { fetchTrendingMovies } from "../../services/api";
 import { useState, useEffect } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
+import styles from "./HomePage.module.css";
 
 function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -24,7 +25,7 @@ function HomePage() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Trending Movies</h1>
       {loading && <Loader />}
       {!loading && <MovieList movies={movies} />}

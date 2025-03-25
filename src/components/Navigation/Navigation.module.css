@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #596886;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding-block: 10px;
+}
+
+.header img {
+  cursor: pointer;
+  display: flex;
+}
+
+nav {
+  display: flex;
+  gap: 1em;
+}
+
+nav a {
+  color: #ffd5af;
+  text-decoration: none;
+  text-shadow: black 2px 2px 2px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: #c4a487;
+}
+
+a.active {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  color: #c4a487;
+}
