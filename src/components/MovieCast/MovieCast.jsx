@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchMovieCast } from "../../services/api";
 import Loader from "../Loader/Loader";
 import placeholder from "../../assets/placeholder.png";
+import styles from "./MovieCast.module.css";
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -33,8 +34,7 @@ const MovieCast = () => {
   }
 
   return (
-    <div>
-      <h3>Cast</h3>
+    <div className={styles.container}>
       <ul>
         {cast.map((actor) => (
           <li key={actor.id}>
@@ -42,18 +42,16 @@ const MovieCast = () => {
               <img
                 src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                 alt={actor.name}
-                width="100"
               />
             ) : (
               <img
                 src={placeholder}
                 alt="No image available"
-                width="100"
-                height="150"
               ></img>
             )}
             <p>{actor.name}</p>
-            <p>Character: {actor.character}</p>
+            <h4>Character:</h4> 
+            <p>{actor.character}</p>
           </li>
         ))}
       </ul>

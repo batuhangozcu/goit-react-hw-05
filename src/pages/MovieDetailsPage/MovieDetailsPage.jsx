@@ -42,34 +42,43 @@ function MovieDetailsPage() {
     <Loader />;
   }
 
-  const language = languageNames[movie.original_language] || movie.original_language;
+  const language =
+    languageNames[movie.original_language] || movie.original_language;
 
   return (
-    <div>
-      <Link to={backLink}>Go back</Link>
+    <div className={styles.container}>
+      <Link className={styles.back} to={backLink}>Go Back</Link>
       <h2>{`${movie.title} (${new Date(
         movie.release_date
       ).getFullYear()})`}</h2>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <p>
-        User score: <span className={movie.vote_average > 7 ? styles.active : ""}> {movie.vote_average.toFixed(1)} / 10 </span>
+      <p className={styles.score}>
+        User score:
+        <span className={movie.vote_average > 7 ? styles.active : ""}>
+          {movie.vote_average.toFixed(1)} / 10
+        </span>
       </p>
-      <h3>Overview</h3>
-      <p>{movie.overview}</p>
-      <h3>Genres</h3>
-      <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
-      <h3>Language</h3>
-      <p>{language}</p>
-      <h3>Runtime</h3>
-      <p>{movie.runtime} minutes</p>
-
-      <h3>Additional information</h3>
-      <Link to="cast">Cast</Link>
-      <Link to="reviews">Reviews</Link>
-      <Outlet />
+      <div className={styles.general}>
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+        />
+        <div className={styles.details}>
+          <h3>Overview</h3>
+          <p>{movie.overview}</p>
+          <h3>Genres</h3>
+          <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
+          <h3>Language</h3>
+          <p>{language}</p>
+          <h3>Runtime</h3>
+          <p>{movie.runtime} minutes</p>
+        </div>
+      </div>
+        <h3>Additional information</h3>
+      <div className={styles.additional}>
+        <Link to="cast">Cast</Link>
+        <Link to="reviews">Reviews</Link>
+        <Outlet />
+      </div>
     </div>
   );
 }
