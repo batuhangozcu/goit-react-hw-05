@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieReviews } from "../../services/api"; // API'yi doğru şekilde içe aktarın
 import Loader from "../Loader/Loader";
+import styles from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -33,8 +34,7 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <h3>Reviews</h3>
-      <ul>
+      <ul className={styles.reviews}>
         {reviews.map((review) => (
           <li key={review.id}>
             <h4>{review.author}</h4>

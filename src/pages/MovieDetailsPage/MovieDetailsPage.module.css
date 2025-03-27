@@ -1,100 +1,106 @@
-.active {
-    color: green;
-}
-
 .container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .container img {
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container h2 {
-    font-size: 40px;
-    color: #596886;
-    margin-top: 20px;
-    font-weight: 900;
-    text-shadow: 1px 1px 1px;
-    letter-spacing: 1.2px;
+  font-size: 40px;
+  color: #596886;
+  margin-top: 20px;
+  font-weight: 900;
+  text-shadow: 1px 1px 1px;
+  letter-spacing: 1.2px;
 }
 
 .container h3 {
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #596886;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #596886;
 }
 
 .details p {
-    font-size: 20px;
-    font-style: italic;
+  font-size: 20px;
+  font-style: italic;
 }
 
-/* .details {
-    gap: 20px;
-} */
-
 .general {
-    display: flex;
-    gap: 90px;
-    margin: 30px 60px;
+  display: flex;
+  gap: 90px;
+  margin: 30px 60px;
 }
 
 .score {
-    margin-top: 0;
-    font-size: 25px;
-    font-style: italic;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 0;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .score span {
-    font-size: 40px;
-    font-weight: 900;
+  font-size: 40px;
+  font-weight: 900;
 }
 
 .additional a {
-    margin-inline: 30px;
-    font-size: 30px;
-    font-weight: 900;
-    text-decoration: none;
-    border-radius: 8px;
-    padding: 5px 35px;
-    background-color: #596886;
-    color: whitesmoke;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.25s;
+  margin-inline: 30px;
+  font-size: 30px;
+  font-weight: 900;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 5px 35px;
+  background-color: #596886;
+  color: whitesmoke;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s;
 }
 
 .additional a:hover {
-    background-color: #213547;
+  background-color: #213547;
 }
 
 .additional a:focus {
-    background-color: #213547;
+  background-color: #213547;
 }
 
 .back {
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 8px;
-    padding: 5px 35px;
-    background-color: #596886;
-    color: whitesmoke;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.25s;
-    width: 80px;
-    display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 5px 35px;
+  background-color: #596886;
+  color: whitesmoke;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s;
+  width: 80px;
+  display: flex;
 }
 
 .back:hover {
-    background-color: #213547;
+  background-color: #213547;
+}
+
+.active {
+  color: green;
+}
+
+.passive {
+  color: red;
+}
+
+@media screen and (max-width: 768px) {
+  .general {
+    flex-direction: column;
+  }
 }

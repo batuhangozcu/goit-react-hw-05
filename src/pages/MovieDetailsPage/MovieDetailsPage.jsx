@@ -4,6 +4,7 @@ import { fetchMovieDetails } from "../../services/api";
 import Loader from "../../components/Loader/Loader";
 import styles from "./MovieDetailsPage.module.css";
 
+// Top20 Languages in movie sector
 const languageNames = {
   en: "English",
   tr: "Turkish",
@@ -47,13 +48,17 @@ function MovieDetailsPage() {
 
   return (
     <div className={styles.container}>
-      <Link className={styles.back} to={backLink}>Go Back</Link>
+      <Link className={styles.back} to={backLink}>
+        Go Back
+      </Link>
       <h2>{`${movie.title} (${new Date(
         movie.release_date
       ).getFullYear()})`}</h2>
       <p className={styles.score}>
         User score:
-        <span className={movie.vote_average > 7 ? styles.active : ""}>
+        <span
+          className={movie.vote_average > 7 ? styles.active : styles.passive}
+        >
           {movie.vote_average.toFixed(1)} / 10
         </span>
       </p>
@@ -73,7 +78,7 @@ function MovieDetailsPage() {
           <p>{movie.runtime} minutes</p>
         </div>
       </div>
-        <h3>Additional information</h3>
+      <h3>Additional information</h3>
       <div className={styles.additional}>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>

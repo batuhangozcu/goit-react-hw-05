@@ -1,0 +1,55 @@
+.blank {
+  display: flex;
+  flex-direction: column;
+}
+
+.blank h4 {
+  margin-bottom: 0;
+}
+
+.blank p {
+  font-size: 60px;
+  font-weight: 700;
+  text-shadow: 2px 2px;
+  color: white;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.blank a {
+  text-decoration: none;
+  color: whitesmoke;
+  width: 180px;
+  height: 50px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  background-color: #596886;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 1px 1px gray;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s;
+}
+
+.blank a:hover {
+  background-color: #213547;
+}
+
+.blank h4 {
+  color: white;
+  font-size: 200px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+.blank h4::before {
+  color: black;
+  content: "404";
+  margin-top: 14px;
+  opacity: 0.7;
+  position: absolute;
+  transform: perspective(200px) rotateX(40deg) scale(0.83);
+  z-index: -1;
+}

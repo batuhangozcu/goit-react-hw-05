@@ -44,13 +44,10 @@ const MovieCast = () => {
                 alt={actor.name}
               />
             ) : (
-              <img
-                src={placeholder}
-                alt="No image available"
-              ></img>
+              <img src={placeholder} alt="No image available"></img>
             )}
             <p>{actor.name}</p>
-            <h4>Character:</h4> 
+            <h4>Character:</h4>
             <p>{actor.character}</p>
           </li>
         ))}
