@@ -27,8 +27,7 @@ function HomePage() {
   return (
     <div className={styles.container}>
       <h1>Trending Movies</h1>
-      {loading && <Loader />}
-      {!loading && <MovieList movies={movies} />}
+      {loading ? <Loader /> : <MovieList movies={movies} />}
     </div>
   );
 }

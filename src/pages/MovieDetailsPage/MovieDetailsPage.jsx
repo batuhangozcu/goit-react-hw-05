@@ -35,13 +35,20 @@ function MovieDetailsPage() {
   const backLink = location.state?.from || "/movies";
 
   useEffect(() => {
-    fetchMovieDetails(movieId).then(setMovie);
+    const fetchData = async () => {
+      try {
+        const data = await fetchMovieDetails(movieId);
+        setMovie(data);
+      } catch (error) {
+        alert(`Something went wrong. Please try again. (${error})`);
+      }
+    };
+
+    fetchData();
   }, [movieId]);
 
-  if (!movie) {
-    return;
-    <Loader />;
-  }
+  if (!movie) return <Loader />;
+
 
   const language =
     languageNames[movie.original_language] || movie.original_language;
