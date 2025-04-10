@@ -49,7 +49,6 @@ function MovieDetailsPage() {
 
   if (!movie) return <Loader />;
 
-
   const language =
     languageNames[movie.original_language] || movie.original_language;
 
